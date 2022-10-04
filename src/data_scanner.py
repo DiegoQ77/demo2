@@ -15,11 +15,12 @@ def search_asset_by_status(items, asset_status=''):
         return []
     for item in items:
         if (item.get('asset_status')):
-            list_of_items.append(item.get('asset_status'))
             if item.get('asset_status') == asset_status:
                 list_of_pending.append(item.get('asset_status'))
+            else:
+                list_of_items.append(item.get('asset_status'))
 
-    if (asset_status == 'Pending return'):
+    if (asset_status == 'Pending Return'):
         return list_of_pending
     else:
         return list_of_items
